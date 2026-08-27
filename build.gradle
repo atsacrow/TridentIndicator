@@ -45,6 +45,10 @@ tasks.withType(JavaCompile).configureEach {
 	it.options.release = 17
 }
 
+tasks.named('compileClientJava') { 
+	classpath = sourceSets.client.compileClasspath 
+}
+
 java {
 	// Loom will automatically attach sourcesJar to a RemapSourcesJar task and to the "build" task
 	// if it is present.
