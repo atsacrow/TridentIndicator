@@ -21,6 +21,9 @@ jobs:
           distribution: 'microsoft'
       - name: make gradle wrapper executable
         run: chmod +x ./gradlew
+      - name: diagnose client classpath 
+        run: ./gradlew dependencies --configuration clientCompileClasspath --stacktrace 
+        continue-on-error: true
       - name: build
         run: ./gradlew build
       - name: capture build artifacts
