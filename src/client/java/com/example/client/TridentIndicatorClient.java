@@ -47,6 +47,12 @@ public class TridentIndicatorClient implements ClientModInitializer {
         boolean someoneChargingTrident = false;
 
         for (PlayerEntity player : client.world.getPlayers()) {
+            // Пропускаем самого себя — иконка должна показывать,
+            // что трезубец заряжает КТО-ТО ДРУГОЙ, а не сам игрок.
+            if (player == client.player) {
+                continue;
+            }
+
             if (isChargingTrident(player)) {
                 someoneChargingTrident = true;
                 break;
