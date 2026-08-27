@@ -24,7 +24,7 @@ public class TridentIndicator implements ModInitializer {
 		LOGGER.info("Hello Fabric world!");
 	}
 
-	public static ResourceLocation id(String path) {
-		return new ResourceLocation(MOD_ID, path);
+	public static Identifier id(String path) {
+		return new Identifier(MOD_ID, path);
 	}
 }
